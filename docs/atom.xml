@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[CUORE_CUPID]]></title>
+  <link href="https://destiny712.github.io/CUORE-CUPID/atom.xml" rel="self"/>
+  <link href="https://destiny712.github.io/CUORE-CUPID/"/>
+  <updated>2022-01-12T10:27:29+01:00</updated>
+  <id>https://destiny712.github.io/CUORE-CUPID/</id>
+  <author>
+    <name><![CDATA[]]></name>
+    
+  </author>
+  <generator uri="http://www.mweb.im/">MWeb</generator>
+  
+  <entry>
+    <title type="html"><![CDATA[Liquid Helium refill memorandum]]></title>
+    <link href="https://destiny712.github.io/CUORE-CUPID/LHe_Refill_in_Hall_C.html"/>
+    <updated>2021-09-09T18:05:28+02:00</updated>
+    <id>https://destiny712.github.io/CUORE-CUPID/LHe_Refill_in_Hall_C.html</id>
+    <content type="html"><![CDATA[
+<ol>
+<li>Set the level reader mode to &quot;10 s” on the software
+<ul>
+<li>Set the level mode in “fast” mode</li>
+</ul>
+</li>
+<li>Liquid Helium can preparation
+<ul>
+<li>Connect the Helium gas tube from He-1 bottle to the can
+<ul>
+<li>(Remember to clean the entire connector)</li>
+</ul>
+</li>
+<li>Insert the liquid Helium transfer line (long one or short one)</li>
+</ul>
+</li>
+<li>Open V3 valve (the red one on liquefier panel)
+<ul>
+<li>(It is the compressor bypass)</li>
+</ul>
+</li>
+<li>Open Main Bath to the CRESST balloon
+<ul>
+<li>(Red valve to balloon in pumping room + black valve behind the main panel)</li>
+</ul>
+</li>
+<li>Plug the “BOA” into the liquid Helium transfer line on the top of the can</li>
+<li>Reduce the liquefier inlet flow down to 3.6 ~ 3.7</li>
+<li>Start the liquid Helium refill
+<ol>
+<li>Keep 20 ~ 30 mbar over-pressure in the liquid Helium can</li>
+<li>Open the transfer line needle valve with 1/2 turn</li>
+<li>Wait for the flame</li>
+<li>Insert the “BOA” in the liquid Helium transfer line on the side of cryostat
+<ul>
+<li>You will see the pressure of Main Bath going up</li>
+<li>(The best is just below the black sign)</li>
+</ul>
+</li>
+<li>Start chronometer
+<ul>
+<li>After 12 ~ 15 min, you will see the pressure of Main Bath going down in the range 1000 ~ 950 mbar</li>
+<li>(This means you are transferring liquid Helium)</li>
+</ul>
+</li>
+<li>Open completely the transfer line needle valve</li>
+<li>Keep the over-pressure in the can in the range 100 c~ 150 mbar</li>
+</ol>
+</li>
+<li>Stop the liquid Helium refill when reach at ~82% and wait 5 min more</li>
+<li>Close safety valve on the can</li>
+<li>Close Main Bath to the CRESST balloon
+<ul>
+<li>(Red valve to balloon in pumping room + black valve behind the main panel)</li>
+<li>Make sure that the pressure of Main Bath stay similar</li>
+</ul>
+</li>
+<li>Restore “900 s” reading and “slow” mode on level meter</li>
+<li>Start to progressively close V3
+<ul>
+<li>Keep the flow meter ball below 35</li>
+</ul>
+</li>
+<li>When V3 is completely closed, wait Main Bath evaporation flow recover below ~14</li>
+<li>Start increasing the liquefier inlet until ~9.00</li>
+<li>Remove the “BOA” and the Helium transfer line from the can</li>
+<li>Remove the Helium gas line from the can and remember to close the He-1 bottle</li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>
