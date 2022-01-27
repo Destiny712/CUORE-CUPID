@@ -4,7 +4,7 @@
   <title><![CDATA[CUORE_CUPID]]></title>
   <link href="https://destiny712.github.io/CUORE-CUPID/atom.xml" rel="self"/>
   <link href="https://destiny712.github.io/CUORE-CUPID/"/>
-  <updated>2022-01-27T12:14:43+01:00</updated>
+  <updated>2022-01-27T14:47:43+01:00</updated>
   <id>https://destiny712.github.io/CUORE-CUPID/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -89,10 +89,10 @@
 		\sigma_{\sigma_{Y}^{2}}^{2} &amp;= \operatorname{Var}{( \operatorname{Var}{(Y)} )} \\ 
 		\sigma_{\sigma_{X}^{2}}^{2} &amp;= \operatorname{Var}{( \operatorname{Var}{(X)} )} \\ 
 		\sigma_{Y}^{2} &amp;= \operatorname{Var}{(Y)} \\ 
-		\sigma_{X}^{2} &amp;= \operatorname{Var}{(Y)} \\ 
-		\rho_{X2Y2} &amp;= {
-		\frac{\operatorname{Cov}{(X^{2},Y^{2})}}
-			{Y_{M4}X_{M4}}
+		\sigma_{X}^{2} &amp;= \operatorname{Var}{(X)} \\ 
+		\rho_{X2Y2} &amp;= { 
+		\frac{\operatorname{Cov}{(X^{2},Y^{2})}} 
+			{Y_{M4}X_{M4}} 
 		}^{1/2} 
 	\end{aligned} 
 \label{eq: sigmaXYDef} 
@@ -101,14 +101,16 @@
 <p>And:</p>
 \[\begin{equation} 
 	\begin{aligned} 
-		\operatorname{Var}{(X)} &amp;= \sum {{\left( X_{i} - \bar{X} \right)}^{2}} / (N-1) \\ 
+		\operatorname{Var}{(X)} &amp;= 
+		\frac{\sum {{\left( X_{i} - \bar{X} \right)}^{2}}} 
+			{N-1} \\ 
 		X_{M4} &amp;= 
-		\frac{\sum {{\left( X_{i} - \bar{X} \right)}^{4}}}
+		\frac{\sum {{\left( X_{i} - \bar{X} \right)}^{4}}} 
 			{N} \\ 
 		\operatorname{Cov}{(X^{2},Y^{2})} &amp;= 
 		\frac{\sum {{\left( 
 			\left( X_{i} - \bar{X} \right) \left( Y_{i} - \bar{Y} \right) 
-		\right)}^{2}}}
+		\right)}^{2}}} 
 			{N} 
 	\end{aligned} 
 \label{eq: VarXDef} 
