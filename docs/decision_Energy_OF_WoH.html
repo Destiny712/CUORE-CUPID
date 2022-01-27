@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-    CUORE_CUPID
+    Diana learning memorandum - CUORE_CUPID
     
     </title>
     
@@ -59,59 +59,144 @@
 
             <div id="container">
 
- <div id="post-index" class="container">
-    
+ 
+<div class="container">
+  <article class="post-container">
     <header class="post-header">
-        <h1 class="post-title">CUORE_CUPID</h1>
-        <p class="des">Random information of CUORE/CUPID</p>
+        <h1 class="post-title">Diana learning memorandum</h1>
+        <p class="post-date">
+                <span>Posted <time datetime="2022/01/26" itemprop="datePublished">2022/01/26</time></span>
+            </p>
     </header>
-     <ol class="post-list">
-        
-        
-            <li class="post-stub">
-              <h2 class="post-stub-title">
-                <a href="decision_Energy_OF_WoH.html">
-                  Diana learning memorandum
-                </a>
-              </h2>
-              <p>
-                <time class="post-stub-date" datetime="2019-09-26">Posted 2022/01/26</time>
-              </p>
 
-                 
-            
-              <div class="post-read-more">
-                <a href="decision_Energy_OF_WoH.html">[Read More]</a>
-              </div>
-            </li>
-            
-        
-            <li class="post-stub">
-              <h2 class="post-stub-title">
-                <a href="LHe_Refill_in_Hall_C.html">
-                  Liquid Helium refill memorandum
-                </a>
-              </h2>
-              <p>
-                <time class="post-stub-date" datetime="2019-09-26">Posted 2021/09/09</time>
-              </p>
+    <div class="post-content clearfix">
+<h2><a id="criteria-for-decision-of-energy-of-woh" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Criteria for decision of Energy_OF_WoH</h2>
+<p>In most of the channels, both estimators (Energy_OF &amp; Energy_OF_WoH) are valid.</p>
+<ul>
+<li>In this case, we begin by assuming Energy_OF as the default,</li>
+<li>But define a set of criteria to decide when Energy_OF_WoH is preferred.</li>
+</ul>
+<p>We define two quantities, a figure of merit (\(W \eqref{eq: WDef}\)), and significance (\(Z \eqref{eq: ZDef}\)), where:</p>
+\[\begin{equation} 
+	W \equiv 
+	\frac{\sigma_{\rm{OF\_WoH}}^{2} E_{\rm{OF}}^{2}} 
+		{\sigma_{\rm{OF}}^{2} E_{\rm{OF\_WoH}}^{2}} 
+\label{eq: WDef} 
+\end{equation} 
+\]
+<p>And</p>
+\[\begin{equation} 
+	Z \equiv 
+	\frac{1-W} 
+		{\sigma_{W}} 
+\label{eq: ZDef} 
+\end{equation} 
+\]
+<p>Here:</p>
+<ul>
+<li>\(\sigma_{\rm{OF}}\) (or \(\sigma_{\rm{OF\_WoH}}\)) is the RMS of the measured pulse amplitudes of events on the Ch-D as measured using Energy_OF (or Energy_OF_WoH).</li>
+<li>\(E_{\rm{OF}}\) (or \(E_{\rm{OF\_WoH}}\)) is the exposure for the Ch-D, measured as the product of the detector mass and the live time.</li>
+</ul>
+<p>In general,</p>
+<ul>
+<li>Smaller values for the energy resolution</li>
+<li>And larger values for the exposure</li>
+</ul>
+<p>are preferred for the best sensitivity.</p>
+<p>We chose threshold values for \(W\) and \(Z\) to establish the criteria for selecting an alternative energy estimator for a given channel.</p>
+<ul>
+<li>A value of \(W &lt; 1\) indicates that the channel performs better with the alternative energy estimator (Energy_OF_WoH),</li>
+<li>While \(Z &gt; 1\) indicates that the value of \(W\) is “significant” with respect to the width of the distribution of \(W\) (i.e., \(\sigma_{W} \eqref{eq: sigmaWCal}\)), calculated with direct propagation of errors for the specified Ch-D:</li>
+</ul>
+\[\begin{equation} 
+	\sigma_{W} = \left[ 
+		\left( 
+			\sigma_{\sigma_{Y}^{2}}^{2} 
+				/ \sigma_{Y}^{2} 
+		\right)^{2} 
+		+ \left( 
+			\sigma_{\sigma_{X}^{2}}^{2} 
+				/ \sigma_{X}^{2} 
+		\right)^{2} 
+		- 2 \left( 
+			\sigma_{\sigma_{Y}^{2}}^{2} 
+				/ \sigma_{Y}^{2} 
+		\right) 
+		\left( 
+			\sigma_{\sigma_{X}^{2}}^{2} 
+				/ \sigma_{X}^{2} 
+		\right) 
+		\rho_{X2Y2} 
+	\right]^{1/2} 
+	\times \left( 
+		\sigma_{Y}^{2} 
+			/ \sigma_{X}^{2} 
+	\right) 
+\label{eq: sigmaWCal} 
+\end{equation} 
+\]
+<p>Where:</p>
+\[\begin{equation} 
+	\begin{aligned} 
+		\sigma_{\sigma_{Y}^{2}}^{2} &amp;= \operatorname{Var}{( \operatorname{Var}{(Y)} )} \\ 
+		\sigma_{\sigma_{X}^{2}}^{2} &amp;= \operatorname{Var}{( \operatorname{Var}{(X)} )} \\ 
+		\sigma_{Y}^{2} &amp;= \operatorname{Var}{(Y)} \\ 
+		\sigma_{X}^{2} &amp;= \operatorname{Var}{(Y)} \\ 
+		\rho_{X2Y2} &amp;= {
+		\frac{\operatorname{Cov}{(X^{2},Y^{2})}}
+			{Y_{M4}X_{M4}}
+		}^{1/2} 
+	\end{aligned} 
+\label{eq: sigmaXYDef} 
+\end{equation} 
+\]
+<p>And:</p>
+\[\begin{equation} 
+	\begin{aligned} 
+		\operatorname{Var}{(X)} &amp;= \sum {{\left( X_{i} - \bar{X} \right)}^{2}} / (N-1) \\ 
+		X_{M4} &amp;= 
+		\frac{\sum {{\left( X_{i} - \bar{X} \right)}^{4}}}
+			{N} \\ 
+		\operatorname{Cov}{(X^{2},Y^{2})} &amp;= 
+		\frac{\sum {{\left( 
+			\left( X_{i} - \bar{X} \right) \left( Y_{i} - \bar{Y} \right) 
+		\right)}^{2}}}
+			{N} 
+	\end{aligned} 
+\label{eq: VarXDef} 
+\end{equation} 
+\]
+<p>for \(N\) entries in the \({}^{208}\rm{Tl}\) peak.</p>
+<ul>
+<li>This cut on \(Z\) is implemented to avoid cutting on statistical fluctuations, which can lead to a <a href="https://en.wikipedia.org/wiki/Bias_of_an_estimator">bias</a>.</li>
+</ul>
+<h3><a id="decision" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Decision:</h3>
+<ul>
+<li>For channels with both \(W &lt; 1\) and \(Z &gt; 1\), Energy_OF_WoH was chosen as the energy estimator.</li>
+<li>Channels without heaters and channels for which the variable Energy_OF was invalid were also assigned to use Energy_OF_WoH.</li>
+<li>All others defaulted to Energy_OF.</li>
+<li>Channels for which both estimators were invalid were removed from the analysis.</li>
+</ul>
 
-                 
-            
-              <div class="post-read-more">
-                <a href="LHe_Refill_in_Hall_C.html">[Read More]</a>
-              </div>
-            </li>
-            
-      </ol>
-  <div class="post-navigation">
-    <nav class="pagination">
-       
+    </div>
+    <footer class="post-footer clearfix">
       
-    </nav>
-  </div>
-</div>
-             
+           
+      
+        
+    </footer>
+     <div class="comments-wrap">
+        <div class="share-comments">
+          
+
+          
+
+          
+        </div>
+      </div><!-- end comments wrap -->
+  </article>
+ </div><!-- end-->
+
 
 
     <footer class="footer">
@@ -160,6 +245,9 @@
 
 
 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
+
   
 
 
@@ -173,6 +261,8 @@
 
 
 
+
+<script src="asset/prism.js"></script>
 
         
       

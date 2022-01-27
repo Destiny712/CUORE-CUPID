@@ -4,13 +4,130 @@
   <title><![CDATA[CUORE_CUPID]]></title>
   <link href="https://destiny712.github.io/CUORE-CUPID/atom.xml" rel="self"/>
   <link href="https://destiny712.github.io/CUORE-CUPID/"/>
-  <updated>2022-01-12T11:21:02+01:00</updated>
+  <updated>2022-01-27T12:14:43+01:00</updated>
   <id>https://destiny712.github.io/CUORE-CUPID/</id>
   <author>
     <name><![CDATA[]]></name>
     
   </author>
   <generator uri="http://www.mweb.im/">MWeb</generator>
+  
+  <entry>
+    <title type="html"><![CDATA[Diana learning memorandum]]></title>
+    <link href="https://destiny712.github.io/CUORE-CUPID/decision_Energy_OF_WoH.html"/>
+    <updated>2022-01-26T15:58:09+01:00</updated>
+    <id>https://destiny712.github.io/CUORE-CUPID/decision_Energy_OF_WoH.html</id>
+    <content type="html"><![CDATA[
+<h2><a id="criteria-for-decision-of-energy-of-woh" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Criteria for decision of Energy_OF_WoH</h2>
+<p>In most of the channels, both estimators (Energy_OF &amp; Energy_OF_WoH) are valid.</p>
+<ul>
+<li>In this case, we begin by assuming Energy_OF as the default,</li>
+<li>But define a set of criteria to decide when Energy_OF_WoH is preferred.</li>
+</ul>
+<p>We define two quantities, a figure of merit (\(W \eqref{eq: WDef}\)), and significance (\(Z \eqref{eq: ZDef}\)), where:</p>
+\[\begin{equation} 
+	W \equiv 
+	\frac{\sigma_{\rm{OF\_WoH}}^{2} E_{\rm{OF}}^{2}} 
+		{\sigma_{\rm{OF}}^{2} E_{\rm{OF\_WoH}}^{2}} 
+\label{eq: WDef} 
+\end{equation} 
+\]
+<p>And</p>
+\[\begin{equation} 
+	Z \equiv 
+	\frac{1-W} 
+		{\sigma_{W}} 
+\label{eq: ZDef} 
+\end{equation} 
+\]
+<p>Here:</p>
+<ul>
+<li>\(\sigma_{\rm{OF}}\) (or \(\sigma_{\rm{OF\_WoH}}\)) is the RMS of the measured pulse amplitudes of events on the Ch-D as measured using Energy_OF (or Energy_OF_WoH).</li>
+<li>\(E_{\rm{OF}}\) (or \(E_{\rm{OF\_WoH}}\)) is the exposure for the Ch-D, measured as the product of the detector mass and the live time.</li>
+</ul>
+<p>In general,</p>
+<ul>
+<li>Smaller values for the energy resolution</li>
+<li>And larger values for the exposure</li>
+</ul>
+<p>are preferred for the best sensitivity.</p>
+<p>We chose threshold values for \(W\) and \(Z\) to establish the criteria for selecting an alternative energy estimator for a given channel.</p>
+<ul>
+<li>A value of \(W &lt; 1\) indicates that the channel performs better with the alternative energy estimator (Energy_OF_WoH),</li>
+<li>While \(Z &gt; 1\) indicates that the value of \(W\) is “significant” with respect to the width of the distribution of \(W\) (i.e., \(\sigma_{W} \eqref{eq: sigmaWCal}\)), calculated with direct propagation of errors for the specified Ch-D:</li>
+</ul>
+\[\begin{equation} 
+	\sigma_{W} = \left[ 
+		\left( 
+			\sigma_{\sigma_{Y}^{2}}^{2} 
+				/ \sigma_{Y}^{2} 
+		\right)^{2} 
+		+ \left( 
+			\sigma_{\sigma_{X}^{2}}^{2} 
+				/ \sigma_{X}^{2} 
+		\right)^{2} 
+		- 2 \left( 
+			\sigma_{\sigma_{Y}^{2}}^{2} 
+				/ \sigma_{Y}^{2} 
+		\right) 
+		\left( 
+			\sigma_{\sigma_{X}^{2}}^{2} 
+				/ \sigma_{X}^{2} 
+		\right) 
+		\rho_{X2Y2} 
+	\right]^{1/2} 
+	\times \left( 
+		\sigma_{Y}^{2} 
+			/ \sigma_{X}^{2} 
+	\right) 
+\label{eq: sigmaWCal} 
+\end{equation} 
+\]
+<p>Where:</p>
+\[\begin{equation} 
+	\begin{aligned} 
+		\sigma_{\sigma_{Y}^{2}}^{2} &amp;= \operatorname{Var}{( \operatorname{Var}{(Y)} )} \\ 
+		\sigma_{\sigma_{X}^{2}}^{2} &amp;= \operatorname{Var}{( \operatorname{Var}{(X)} )} \\ 
+		\sigma_{Y}^{2} &amp;= \operatorname{Var}{(Y)} \\ 
+		\sigma_{X}^{2} &amp;= \operatorname{Var}{(Y)} \\ 
+		\rho_{X2Y2} &amp;= {
+		\frac{\operatorname{Cov}{(X^{2},Y^{2})}}
+			{Y_{M4}X_{M4}}
+		}^{1/2} 
+	\end{aligned} 
+\label{eq: sigmaXYDef} 
+\end{equation} 
+\]
+<p>And:</p>
+\[\begin{equation} 
+	\begin{aligned} 
+		\operatorname{Var}{(X)} &amp;= \sum {{\left( X_{i} - \bar{X} \right)}^{2}} / (N-1) \\ 
+		X_{M4} &amp;= 
+		\frac{\sum {{\left( X_{i} - \bar{X} \right)}^{4}}}
+			{N} \\ 
+		\operatorname{Cov}{(X^{2},Y^{2})} &amp;= 
+		\frac{\sum {{\left( 
+			\left( X_{i} - \bar{X} \right) \left( Y_{i} - \bar{Y} \right) 
+		\right)}^{2}}}
+			{N} 
+	\end{aligned} 
+\label{eq: VarXDef} 
+\end{equation} 
+\]
+<p>for \(N\) entries in the \({}^{208}\rm{Tl}\) peak.</p>
+<ul>
+<li>This cut on \(Z\) is implemented to avoid cutting on statistical fluctuations, which can lead to a <a href="https://en.wikipedia.org/wiki/Bias_of_an_estimator">bias</a>.</li>
+</ul>
+<h3><a id="decision" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Decision:</h3>
+<ul>
+<li>For channels with both \(W &lt; 1\) and \(Z &gt; 1\), Energy_OF_WoH was chosen as the energy estimator.</li>
+<li>Channels without heaters and channels for which the variable Energy_OF was invalid were also assigned to use Energy_OF_WoH.</li>
+<li>All others defaulted to Energy_OF.</li>
+<li>Channels for which both estimators were invalid were removed from the analysis.</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Liquid Helium refill memorandum]]></title>
