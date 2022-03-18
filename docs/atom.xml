@@ -4,13 +4,54 @@
   <title><![CDATA[CUORE_CUPID]]></title>
   <link href="https://destiny712.github.io/CUORE-CUPID/atom.xml" rel="self"/>
   <link href="https://destiny712.github.io/CUORE-CUPID/"/>
-  <updated>2022-01-27T14:47:43+01:00</updated>
+  <updated>2022-03-18T14:56:42+01:00</updated>
   <id>https://destiny712.github.io/CUORE-CUPID/</id>
   <author>
     <name><![CDATA[]]></name>
     
   </author>
   <generator uri="http://www.mweb.im/">MWeb</generator>
+  
+  <entry>
+    <title type="html"><![CDATA[The CUORE cryostat: current performance and future upgrade towards CUPID]]></title>
+    <link href="https://destiny712.github.io/CUORE-CUPID/Neutrino_2022_poster.html"/>
+    <updated>2022-03-12T09:45:19+01:00</updated>
+    <id>https://destiny712.github.io/CUORE-CUPID/Neutrino_2022_poster.html</id>
+    <content type="html"><![CDATA[
+<blockquote>
+<h3><a id="author-shihong-fu-jiaxuan-cao-on-behalf-of-the-cuore-collaboration-and-cupid-collaboration" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Author: Shihong Fu\(^{*}\), Jiaxuan Cao, on behalf of the CUORE collaboration and CUPID collaboration</h3>
+</blockquote>
+<h2><a id="abstract" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Abstract</h2>
+<ul>
+<li>The <strong>CUORE</strong> (Cryogenic Underground Observatory for Rare Events) experiment is a ton-scale detector<sup class="footnote-ref"><a href="#fn1" id="fnref1">1</a></sup> , operating at a cryogenic temperature around 10 mK, searching for neutrinoless double-beta decay of \(^{130}\rm{Te}\) and other rare events. It owns today's largest milli-Kelvin infrastructure in the world<sup class="footnote-ref"><a href="#fn2" id="fnref2">2</a></sup>. We envision an upgrade of the CUORE cryostat in order to host the new <strong>CUPID</strong> (CUORE Upgrade with Particle IDentification)<sup class="footnote-ref"><a href="#fn3" id="fnref3">3</a></sup> <sup class="footnote-ref"><a href="#fn4" id="fnref4">4</a></sup> array and read-out system<sup class="footnote-ref"><a href="#fn5" id="fnref5">5</a></sup>. The former will account for about 1500 bolometers, each served by a light detector; the latter will consequently lead to ~3 times higher thermal load coming from the CUPID wiring with respect to CUORE.</li>
+<li>In this poster the cryogenics upgrades will be mainly introduced, with a particular focus on the <strong>PT</strong> (Pulse Tube) system and wiring thermalizations enhancements.</li>
+<li>We foresee further improvements dedicated to the abatement of the vibrational noise, which in turn will improve the achievable energy resolution of bolometers. Thanks to the experience provided by CUORE, we can clearly demonstrate the effectiveness of the active Pulse Tube noise cancellation technique<sup class="footnote-ref"><a href="#fn6" id="fnref6">6</a></sup>, which will also be strengthened and applied in CUPID.</li>
+</ul>
+<section class="footnotes">
+<ol>
+<li id="fn1">
+<p>D. Q. Adams et al. (CUORE Collaboration). <a href="https://dx.doi.org/10.1016/j.ppnp.2021.103902">CUORE opens the door to tonne-scale cryogenics experiments</a>. Progress in Particle and Nuclear Physics 122, 103902 (2022). <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2">
+<p>A. D’Addabbo et al.. <a href="https://dx.doi.org/10.1007/s10909-018-2054-5">The CUORE Cryostat</a>. J. Low Temp. Phys. 193, 867–875 (2018). <a href="#fnref2" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn3">
+<p>CUPID Collaboration, CUPID: CUORE (Cryogenic Underground Observatory for Rare Events) Upgrade with Particle IDentification <a href="https://arxiv.org/abs/1504.03599">arXiv:1504.04599</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn4">
+<p>CUPID Collaboration, Optimization of the first CUPID detector module <a href="https://arxiv.org/abs/2202.06279">arXiv:2202.06279</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn5">
+<p>CUPID Collaboration, Toward CUPID-1T <a href="https://arxiv.org/abs/2203.08386">arXiv:2203.08386</a> <a href="#fnref5" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn6">
+<p>V. Dompè, C. Bucci, L. Canonica, A. D’Addabbo, S. Di Domizio, G. Fantini, P. Gorla, L. Marini, A. Nucciotti, I. Nutini, C. Rusconi, B. Schmidt, B. Welliver. <a href="https://dx.doi.org/10.1007/s10909-020-02435-0">The CUORE Pulse Tube Noise Cancellation Technique</a>. J. Low Temp. Phys. 200, 286–294 (2020). <a href="#fnref6" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Diana learning memorandum]]></title>
