@@ -89,19 +89,20 @@
 <li><a href="#routine-leak-check">Routine leak check</a>
 <ul>
 <li><a href="#leak-check-between-mb-and-ovc">Leak check between MB and OVC</a></li>
-<li><a href="#natural-leak-rate-of-mb">Natural leak rate of MB</a></li>
 <li><a href="#vacuum-baseline-of-mb">Vacuum baseline of MB</a></li>
+<li><a href="#natural-leak-rate-of-mb">Natural leak rate of MB</a></li>
 <li><a href="#leak-check-between-mb-and-ivc">Leak check between MB and IVC</a></li>
 <li><a href="#leak-check-between-1kpot-and-ivc">Leak check between 1KPOT and IVC</a></li>
 </ul>
 </li>
+<li><a href="#electronics-measurements">Electronics measurements</a></li>
 <li><a href="#du-capillary-flow-test">DU capillary flow test</a></li>
-<li><a href="#leak-check-du-ivc">Leak check DU -&gt; IVC</a></li>
+<li><a href="#leak-check-du-to-ivc">Leak check DU \(\to\) IVC</a></li>
 <li><a href="#flow-test-1kpot-needle-valves">Flow test 1Kpot needle valves</a></li>
-<li><a href="#ivc-filling-with-rm-n-2">IVC filling with \(\rm{N}_{2}\)</a></li>
-<li><a href="#mb-filling-with-ln">MB filling with LN</a></li>
+<li><a href="#ivc-filling-with-n2">IVC filling with N2</a></li>
+<li><a href="#mb-filling-with-ln2">MB filling with LN2</a></li>
+<li><a href="#re-transferring-of-ln2">Re-transferring of LN2</a></li>
 <li><a href="#liquefier-preparation">Liquefier preparation</a></li>
-<li><a href="#re-transferring-of-liquid-nitrogen">re-transferring of liquid nitrogen</a></li>
 <li><a href="#tests-at-ln-temperature">Tests at LN temperature</a></li>
 <li><a href="#mb-filling-with-lhe-lherefillmemo">MB filling with LHe</a></li>
 <li><a href="#ivc-pumping">IVC pumping</a></li>
@@ -109,6 +110,7 @@
 <li><a href="#condensation">Condensation</a></li>
 <li><a href="#3-rm-he-4-rm-he-mixture-circulation">\(^{3}\rm{He}/^{4}\rm{He}\) mixture circulation</a></li>
 <li><a href="#collect-the-mixture">Collect the mixture</a></li>
+<li><a href="#cleaning-the-ln2-trap">Cleaning the LN2 trap</a></li>
 </ul>
 </li>
 <li><a href="#maintenance">Maintenance</a>
@@ -129,16 +131,17 @@
 <ul>
 <li>Typically, between two consecutive runs, you are forced to unplug the condenser KF-10 bellow and the still ISO-K100, both on top of the cryostat.</li>
 </ul>
-</li>
-<li>The DU leak check should be performed at <em>room temperature</em>.
 <blockquote>
-<p>The recommended leak rate should be \(&lt; 10^{-9} \ \rm{mbar*l/s}\).</p>
+<ul>
+<li>The DU leak check should be performed at <em>room temperature</em>.<br />
+The recommended leak rate should be \(&lt; 10^{-9} \ \rm{mbar*l/s}\).</li>
+</ul>
 </blockquote>
 </li>
 </ul>
 <h3><a id="rinse-the-du" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rinse the DU</h3>
 <ul>
-<li>To achieve ideal leak rate, you can rinse the DU circulation path with high-purity <strong>N2</strong> (Nitrogen).
+<li>To achieve an ideal leak rate, you can rinse the DU circulation path with high-purity <strong>N2</strong> (Nitrogen).
 <ul>
 <li>Because after years of using, a large amount of <strong>He</strong> (Helium) remains inside the pipes.</li>
 <li>The high-purity nitrogen could come from the <strong>LN2</strong> (Liquid Nitrogen) <a href="https://en.wikipedia.org/wiki/Cryogenic_storage_dewar/">dewar</a>.</li>
@@ -180,14 +183,19 @@
 </ul>
 <hr />
 <h2><a id="du-pumping" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>DU pumping</h2>
-<p>Before operation, the IVC is being pumped with turbo and leak detector.</p>
-<ul>
-<li>We closed the valve on the IVC and <strong>turned off the turbo</strong>.</li>
-<li>While waiting for the turbo to decelerate, we pump the cryostat from the back end with the BYPASSofSTILL.</li>
-<li>After that, we opened the valve of the condenser line, and pumped from the front end.</li>
-<li>We used the BYPASS A and B to clean up the ROOTS pump.</li>
-<li>We opened the QSB valve in front of the ROOTS pump, allowing the cryostat to be pumped by the ROOTS pump.</li>
-</ul>
+<ol>
+<li>Before operation, the IVC is being pumped with turbo and leak detector.</li>
+<li>Close the valve on the IVC and <strong>turn off the turbo</strong>.</li>
+<li>While waiting for the turbo to decelerate, pump the cryostat from the back end with the BYPASSofSTILL.</li>
+<li>After that, open the valve of the condenser line, and pump from the front end.</li>
+<li>Use the BYPASS A and B to clean the ROOTS pump.</li>
+<li>Open the QSB valve in front of the ROOTS pump, allowing the cryostat to be pumped by the ROOTS pump.
+<blockquote>
+<p>Always check the situation of the QSB valve after shutting off the power to the panel.</p>
+</blockquote>
+</li>
+<li>With BYPASSofSTILL, pump the condenser.</li>
+</ol>
 <h3><a id="the-path-of-reference" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>The path of reference</h3>
 <ul>
 <li>\(\rm{v12 + v13 \to ROTARY \to G4}\)
@@ -214,60 +222,80 @@
 <hr />
 <h2><a id="cold-finger-inserting" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cold finger inserting</h2>
 <ul>
-<li>We inserted the liquid Helium delivery line from the liquefier into the cryostat MB.</li>
+<li>Insert the <strong>LHe</strong> (Liquid Helium) transferring line (<strong>cold finger</strong>) from the liquefier into the cryostat <strong>MB</strong> (Main Bath).
+<ul>
+<li>When inserting, be sure to have two O-rings inside the ferrule.
+<ul>
+<li>After inserting the cold fingers, then secure the first O-ring in the groove.</li>
+</ul>
+</li>
+<li>In addition, during the insertion process, there will be two layers of baffles that will hinder you.
+<ul>
+<li>Solve it by rotating instead of using force.</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <hr />
 <h2><a id="routine-leak-check" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Routine leak check</h2>
 <h3><a id="leak-check-between-mb-and-ovc" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Leak check between MB and OVC</h3>
-<ul>
-<li>After the turbo was ready, we opened the valve of the OVC and, using the <strong>LD</strong> (Leak Detector), checked the He leaking rate of the OVC.</li>
-<li>We waited for the OVC vacuum to almost reach its limit.</li>
-<li>Using the 1KPOT pump, we pumped the MB and then filled the MB with He (gradually, per 200 mbar, while checking the leak rate of the leak detector).</li>
-<li>Closed the valve of the OVC.</li>
-</ul>
-<h3><a id="natural-leak-rate-of-mb" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Natural leak rate of MB</h3>
-<ul>
-<li>We kept the MB isolated and checked the MB leak rate with reference to pressure changes.
+<ol>
+<li>After the turbo was ready, open the valve of the OVC and, using the <strong>LD</strong> (Leak Detector), checked the He leak rate of the OVC.</li>
+<li>Wait for the vacuum in OVC to almost reach its limit.</li>
+<li>Using the 1KPOT pump, pump the MB above 400 mbar.</li>
+<li>Then fill the MB with He (gradually, per 200 mbar, while checking the leak rate of LD).</li>
+<li>Close the valve of the OVC.</li>
+</ol>
+<h3><a id="vacuum-baseline-of-mb" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Vacuum baseline of MB</h3>
+<ol>
+<li>Use both AUX pump and 1KPOT pump simultaneously to pump MB.
 <blockquote>
-<p>It was 16 mbar/min.</p>
+<p>The baseline of vacuum could reach \(7 \times 10^{-2} \ \rm{mbar}\), read from P4.</p>
 </blockquote>
 </li>
-</ul>
-<h3><a id="vacuum-baseline-of-mb" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Vacuum baseline of MB</h3>
-<ul>
-<li>At the same time, the auxiliary pump and 1KPOT pump were used to pump MB, and the level of baseline can be achieved reached 1.0 * 10^-1 mbar, read from P4.</li>
-</ul>
+</ol>
+<h3><a id="natural-leak-rate-of-mb" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Natural leak rate of MB</h3>
+<ol>
+<li>Keep the MB isolated and check the MB leak rate with reference to pressure changes.
+<blockquote>
+<p>It was 0.3 mbar/min., while v21 is open.</p>
+</blockquote>
+</li>
+</ol>
 <h3><a id="leak-check-between-mb-and-ivc" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Leak check between MB and IVC</h3>
-<ul>
-<li>Opened the valve of the IVC, pumped the MB, and then filled the MB with He (gradually, per 200 mbar, while checking the leak rate of the leak detector).</li>
-</ul>
+<ol>
+<li>Open the valve of the IVC, pump the MB.</li>
+<li>Then fill the MB with He (gradually, per 200 mbar, while checking the leak rate of LD).</li>
+</ol>
 <h3><a id="leak-check-between-1kpot-and-ivc" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Leak check between 1KPOT and IVC</h3>
+<ol>
+<li>Using the 1KPOT pump, pump 1KPOT.</li>
+<li>Then fill the 1KPOT with He (gradually, per 200 mbar, while checking the leak rate of LD).</li>
+</ol>
+<hr />
+<h2><a id="electronics-measurements" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Electronics measurements</h2>
 <ul>
-<li>Using a 1KPOT pump, pumped 1KPOT and then filled the 1KPOT with He (gradually, per 200 mbar, while checking the leak rate of the leak detector).</li>
+<li>Before moving the IVC and after closing the MB, an electronic communication measurement is highly recommended.</li>
+<li>At the black pins, you can measure every channel you need, but at the Fischer interface, you will not be able to measure the EF interface.</li>
+<li>In addition to each channel itself, also measure the grounding of individual pins.</li>
 </ul>
 <hr />
 <h2><a id="du-capillary-flow-test" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>DU capillary flow test</h2>
-<p>Please check that the He flows regularly through the condenser line of the DU.</p>
 <ul>
-<li>In order to make this test, pressurize the still volume (read at <em><strong>G2</strong></em>) with He gas (5.0 is enough) from a bottle and through
-<ul>
-<li>\(\rm{v11 \to v6 \to v7 \to BYPASSofSTILL}\).</li>
-</ul>
-</li>
-</ul>
+<li>Please check that the He flows regularly through the condenser line of the DU.</li>
+<li>In order to make this test, pressurize the still volume (read at <em><strong>G2</strong></em>) with He gas from a bottle.
 <blockquote>
 <p>Make sure that the condenser <em><strong>BYPASS</strong></em> is closed (<em><strong>G3</strong></em> should not increase while <em><strong>G2</strong></em> increases).</p>
 </blockquote>
-<ul>
+</li>
 <li>But perform compatible measurements, <em><strong>G2</strong></em> should always arrive precisely at the black tick just above 1000 mbar.</li>
-<li>Then open v3 (v2-v1A-v1 closed) and measure the pressure increase over time on <em><strong>G3</strong></em> (take into account the offset).</li>
-</ul>
+<li>Then open v3 (v2 &amp; v1A &amp; v1 are closed) and measure the pressure increase over time on <em><strong>G3</strong></em> (take into account the offset).
 <blockquote>
 <p>A suggestion is to measure the increase over a longer period than a minute (like 5 or 10 minutes).</p>
-</blockquote>
-<blockquote>
 <ul>
-<li>The DU capillary flow test must be performed at <em>room temperature</em>, at <em>77K</em> and at <em>4K</em>. The reference capillary flow in 2020-2021 are:
+<li>The DU capillary flow test must be performed at <em>room temperature</em>, at <em>77K</em> and at <em>4K</em>.</li>
+<li>The reference capillary flow in 2020-2021 are:
 <ul>
 <li>3.5 mbar/min @ room T</li>
 <li>18 ~ 19 mbar/min IVC @ 77 K, MC @ 110 ~ 100 K (-19 umol/s on \(^{3}\rm{He}\) flow reader)</li>
@@ -276,56 +304,87 @@
 </li>
 </ul>
 </blockquote>
-<ul>
-<li>We stopped the pumping of cryostat, turned off the ROOTS pump.</li>
-<li>Closed the condenser <em><strong>BYPASS</strong></em>.</li>
-<li>We filled the cryostat with He-2 from still, pumped gas from the condenser. That means we started the counter flow of the circulation path.</li>
-<li>We closed v1 and we suspended the counter flow of the mixture circulation path, which means we performed the capillary test.</li>
-<li>After that we restored the counter flow of the circulation path.</li>
+</li>
 </ul>
+<ol>
+<li>Stop the pumping of cryostat, turn off the ROOTS pump.
+<ul>
+<li>(Closed the condenser <em><strong>BYPASS</strong></em>.)</li>
+</ul>
+</li>
+<li>Fill the cryostat with He-2 from still, through
+<ul>
+<li>\(\rm{v11 \to v6 \to v7 \to BYPASSofSTILL}\).</li>
+</ul>
+</li>
+<li>Pump the gas from the condenser.
+<ul>
+<li>That means you start the counter flow of the circulation path of DU.</li>
+</ul>
+</li>
+<li>Close v1 and suspend the counter flow of the circulation path for 5 min.
+<ul>
+<li>That means you perform the capillary test.</li>
+</ul>
+</li>
+<li>After that restore the counter flow of the circulation path.</li>
+</ol>
 <hr />
-<h2><a id="leak-check-du-ivc" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Leak check DU -&gt; IVC</h2>
+<h2><a id="leak-check-du-to-ivc" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Leak check DU \(\to\) IVC</h2>
+<ul>
+<li>Since is a good practice to counter flow the capillary during a cooldown, this test comes <del>for free</del> in each moment of the cooldown when you are pumping the IVC with the LD.
 <blockquote>
 <ul>
-<li>The leak check DU -&gt; IVC must be performed at <em>room temperature</em>, at <em>77K</em> and at <em>4K</em> and comes <del>for free</del> monitoring the IVC leak rate while making the capillary flow test (for which you have to pressurize the still with 1 bar of He).</li>
+<li>The leak check DU \(\to\) IVC must be performed at <em>room temperature</em>, at <em>77K</em> and at <em>4K</em> and comes <del>for free</del> monitoring the IVC leak rate while making the capillary flow test (for which you have to pressurize the still with 1 bar of He).</li>
 </ul>
 </blockquote>
-<p>Since is a good practice to counter flow the capillary during a cooldown, this test comes <del>for free</del> in each moment of the cooldown when you are pumping the IVC with the leak detector.<br />
-Reaching a good leak rate in IVC is not easy if you use He as exchange gas also from <em>300K</em> down to <em>77K</em>.</p>
+</li>
+<li>Reaching a good leak rate in IVC is not easy if you use He as exchange gas also from <em>300K</em> down to <em>77K</em>.
 <blockquote>
 <p>A reference value of leak rate in IVC is less than few \(10^{-7} \ \rm{mbar*l/s}\) while cooling down.</p>
 </blockquote>
+</li>
+</ul>
 <hr />
 <h2><a id="flow-test-1kpot-needle-valves" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Flow test 1Kpot needle valves</h2>
-<ul>
-<li>Filled 1KPOT with He-1, and test the flow rate of low-impedance and high-impedance needle valves respectively.</li>
+<ol>
+<li>Fill 1KPOT with He-1, and test the flow rate of low-impedance and high-impedance needle valves respectively.</li>
 <li>Then filled the MB and 1KPOT with He-1.</li>
-</ul>
+</ol>
 <hr />
-<h2><a id="ivc-filling-with-rm-n-2" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>IVC filling with \(\rm{N}_{2}\)</h2>
+<h2><a id="ivc-filling-with-n2" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>IVC filling with N2</h2>
+<ol>
+<li>Redo a capillary test.</li>
+<li>Stop pumping of cryostat.</li>
+<li>Provide He-2 from still to cryostat using BYPASSofSTILL.</li>
+<li>Use v1 to pump from the condenser.</li>
+<li>Fill the 1KPOT with He-1.</li>
+<li>Filled the MB with N2.</li>
+<li>Keep the IVC with 20 mbar of N2.</li>
+</ol>
+<hr />
+<h2><a id="mb-filling-with-ln2" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>MB filling with LN2</h2>
+<ol>
+<li>Raise the cold finger a bit.</li>
+<li>Open the valve between the liquefier and the MB, and perform a counter flow from the MB to the getter.
 <ul>
-<li>Redo a capillary test</li>
-<li>We stopped pumping of cryostat. We changed the path of the gas to provide He-2 from still to cryostat using BYPASSofSTILL. We also used valve 1 to pump from the condenser.</li>
-<li>We filled the 1KPOT with He-1;
-<ul>
-<li>filled the MB with nitrogen;</li>
-<li>kept the IVC at 20 mbar of nitrogen.</li>
+<li>When the pressure of MB is found to be oscillating, which means that the liquid nitrogen begins to transfer.</li>
+<li>Control the pressure of MB around 890 mbar.</li>
 </ul>
 </li>
-</ul>
+<li>During the transferring of LN2, perform two capillary tests by closing v1.</li>
+<li>When the overpressure is not enough, stop the counter flow of the liquefier.</li>
+</ol>
 <hr />
-<h2><a id="mb-filling-with-ln" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>MB filling with LN</h2>
+<h2><a id="re-transferring-of-ln2" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Re-transferring of LN2</h2>
+<ol>
+<li>Insert the LN2 transfer line and start the re-transferring of LN2 into the Dewar.</li>
+<li>Put some overpressure nitrogen in the MB for re-transferring the LN2 back to the dewar.
 <ul>
-<li>We raised the LHe transfer pipe a bit.</li>
-<li>We opened the valve between the liquefier and the MB, and performed a counter flow from the MB to the getter.
-<ul>
-<li>When the pressure of MB was found to be oscillating, which means that the liquid nitrogen began to transfer. We controlled the pressure of MB around 890 mbar.</li>
+<li>At first, you can use N2 to squeeze, then you can switch to He-1.</li>
 </ul>
 </li>
-<li>During the transfer of liquid nitrogen, we performed two capillary tests by closing v1.</li>
-<li>We also stopped the counter flow of the liquefier.</li>
-<li>We disconnected the liquid nitrogen transfer line.</li>
-</ul>
+</ol>
 <hr />
 <h2><a id="liquefier-preparation" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Liquefier preparation</h2>
 <ul>
@@ -335,12 +394,6 @@ Reaching a good leak rate in IVC is not easy if you use He as exchange gas also 
 <li>After the turbo is stopped, we attached the IVC to the turbo.</li>
 <li>We turned on GM heads and JT, and using the cooldown bypass.</li>
 <li>Periodically measure the working point.</li>
-</ul>
-<hr />
-<h2><a id="re-transferring-of-liquid-nitrogen" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>re-transferring of liquid nitrogen</h2>
-<ul>
-<li>We inserted the liquid nitrogen transfer line and started the re-transferring of liquid nitrogen into the Dewar.</li>
-<li>We put some overpressure nitrogen in the MB for re-transferring the liquid nitrogen back to the dewar.</li>
 </ul>
 <hr />
 <h2><a id="tests-at-ln-temperature" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tests at LN temperature</h2>
@@ -361,7 +414,7 @@ Reaching a good leak rate in IVC is not easy if you use He as exchange gas also 
 <li>We closed the IVC, stopped the turbo and turned off the leak detector.</li>
 </ul>
 <hr />
-<h2><a id="mb-filling-with-lhe-lherefillmemo" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>MB filling with <a href="https://destiny712.github.io/CUORE-CUPID/LHe_Refill_in_Hall_C.html" title="Liquid Helium refill memorandum">LHe</a> ()</h2>
+<h2><a id="mb-filling-with-lhe-lherefillmemo" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>MB filling with <a href="https://destiny712.github.io/CUORE-CUPID/LHe_Refill_in_Hall_C.html" title="Liquid Helium refill memorandum">LHe</a></h2>
 <ul>
 <li>start to transfer without waiting for the LHe flame of the boa. The MB and the 1KPot should be in communication and both to recovery. In the IVC there should be some He gas to be used as exchange gas. Moreover, the final part of this helium transfer is different from the refill one because it has to be interrupted at precise conditions.</li>
 </ul>
@@ -376,11 +429,20 @@ Reaching a good leak rate in IVC is not easy if you use He as exchange gas also 
 <hr />
 <h2><a id="collect-the-mixture" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Collect the mixture</h2>
 <hr />
+<h2><a id="cleaning-the-ln2-trap" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cleaning the LN2 trap</h2>
+<ul>
+<li>Various impurity gases may be absorbed in the cold trap, which can be removed by heating.</li>
+</ul>
+<ol>
+<li>Isolate the LN2 trap.</li>
+<li>Pump the LN2 trap from v4A.</li>
+<li>Heat the LN2 trap up.</li>
+</ol>
 <hr />
 <h1><a id="maintenance" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Maintenance</h1>
 <h2><a id="1kpot-pump" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>1KPOT pump</h2>
-<p>The 1KPOT pump currently used in Hall-C is for pumping 1KPOT, and occasionally as well for MB.</p>
 <ul>
+<li>The 1KPOT pump currently used in Hall-C is for pumping 1KPOT, and occasionally as well for MB.</li>
 <li>Its model number is D40B and it has gas ballast.</li>
 <li><a href="https://istnazfisnucl.sharepoint.com/:b:/s/LNGS-CCC-CUPID/ET1s2t9lfpFNgdCuUzQFVrgBKdyILOnL1h-SFtH5AZ8YQA?e=bpaKdp">Here</a> you can find its manual.</li>
 </ul>
