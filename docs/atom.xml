@@ -4,13 +4,103 @@
   <title><![CDATA[CUORE_CUPID]]></title>
   <link href="https://destiny712.github.io/CUORE-CUPID/atom.xml" rel="self"/>
   <link href="https://destiny712.github.io/CUORE-CUPID/"/>
-  <updated>2022-04-19T13:50:03+02:00</updated>
+  <updated>2022-04-28T13:48:32+02:00</updated>
   <id>https://destiny712.github.io/CUORE-CUPID/</id>
   <author>
     <name><![CDATA[]]></name>
     
   </author>
   <generator uri="http://www.mweb.im/">MWeb</generator>
+  
+  <entry>
+    <title type="html"><![CDATA[Coincidence module]]></title>
+    <link href="https://destiny712.github.io/CUORE-CUPID/Coincidence_Module.html"/>
+    <updated>2022-04-28T10:39:08+02:00</updated>
+    <id>https://destiny712.github.io/CUORE-CUPID/Coincidence_Module.html</id>
+    <content type="html"><![CDATA[
+<ul>
+<li><a href="#coincidence-module">Coincidence module</a>
+<ul>
+<li><a href="#coincidences">Coincidences</a></li>
+<li><a href="#the-calculation-of-coincidences">The calculation of coincidences</a></li>
+<li><a href="#jitter">Jitter</a></li>
+<li><a href="#response-synchronisation-and-coincidence-calculation">Response synchronisation and coincidence calculation</a></li>
+</ul>
+</li>
+</ul>
+<h2><a id="coincidences" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Coincidences</h2>
+<p>Coincidences with <strong>response synchronisation</strong> were implemented as the standard method of calculating coincidences for the final CUORE-0 analysis. The performance of this method on the <strong>anti-coincidence</strong> and coincidence <strong>efficiency</strong> is similar or better compared to the previous adopted coincidence analysis, with significant reduction of the rate of random coincidences, by using a <strong>shorter</strong> coincidence window. The analysis is documented in CUORE-0 Internal Note 104D<sup class="footnote-ref"><a href="#fn1" id="fnref1">1</a></sup>.</p>
+<h2><a id="the-calculation-of-coincidences" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>The calculation of coincidences</h2>
+<p>The calculation of coincidences in <em><strong>Diana</strong></em> is performed by the module <strong>MCoincidence</strong><sup class="footnote-ref"><a href="#fn2" id="fnref2">2</a></sup>. The calculation of coincidences relies on the definition of a coincidence window \(\Delta t\). If the time difference between two or more events is within \(\Delta t\), the <strong>multiplicity</strong> of the event is increased accordingly. In CUORE analysis we also use the so called <em>running window</em>. Given a value \(t\) for the coincidence window, a running window will open at first event and will close when there are no more events <strong>within</strong> time \(t\) of the last event.<br />
+The module MCoincidence is executed on events that have already gone through several steps of the analysis chain (<em>amplitude</em>, <em>stabilisation</em>, <em>energy calibration</em>). The module MCoincidence allows the analyst to choose the time of the event to be used to calculate \(\Delta t\). Possible choices are:</p>
+<ul>
+<li>the <strong>raw</strong> time of the event;</li>
+<li>the <strong>OF</strong> time, that is: (raw time + \(\rm{OF_{Delay}}\)/1000 - sample index/sampling frequency);</li>
+<li>the <strong>synchronised</strong> time, calculated with the method described <a href="#response-synchronisation-and-coincidence-calculation">below</a>.</li>
+</ul>
+<p>The variable \(\rm{OF_{Delay}}\) above is calculated by the <strong>OptimumFilter</strong> and it’s defined as the distance in ms between the <strong>trigger</strong> position and the maximum of the <strong>filtered</strong> waveform.<br />
+The response synchronisation is a method to <strong>compensate</strong> for the existence of a channel to channel <strong>variance</strong> in detector time response.</p>
+<ul>
+<li>A true (physical) <strong>coincidence</strong> among different bolometers is originated from a particle passing through <strong>more than one crystal</strong> and releasing energy above <strong>threshold</strong> in all of them;</li>
+<li>Or from <strong>more than one particle</strong> emitted <strong>simultaneously</strong> from the same radioactive decay and crossing different bolometers at the same time.</li>
+</ul>
+<p>In both cases, the time difference among the various energy <strong>releases</strong> is negligible with respect to the <strong>intrinsic</strong> rise time of the bolometric signal.<br />
+When looking at the distribution of \(\Delta t\) for multiplicity-two events with total energy around 2615 keV, we can see that, instead of being peaked around zero over a flat background of random coincidences, \(\Delta t\) has a <strong>broader</strong> distribution compared to out <em>timing reconstruction precision</em>. Moreover, there are <strong>fine</strong> structures, which represent <strong>characteristic</strong> values of \(\Delta t\) for different couples of channels.</p>
+<h2><a id="jitter" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Jitter</h2>
+<p>This behaviour can be explained considering that each bolometer has its <strong>own</strong> rise time. A <strong>simultaneous</strong> energy deposition in two bolometers gives rise to events that have a characteristic time <strong>difference</strong>, reflecting the difference in rise time. We call this characteristic time difference the <em><strong>jitter</strong></em> between the two channels. By correcting for it, we can obtain a more <strong>resolved</strong> DeltaT among coincident events and use a much <strong>shorter</strong> coincidence window, thus <strong>reducing</strong> the number of accidental coincidences, that are removed from the analysis, and improving the signal <strong>efficiency</strong>.<br />
+From the comparison of the distribution of \(\Delta t\) with a similar plot in Internal Note 104D<sup class="footnote-ref"><a href="#fn1" id="fnref1">1</a></sup>, we can see that the number of multiplicity-two <strong>events</strong> with total energy around 2615 keV for the entire (initial) calibration of ds3021 is below 3000. Considering that CUORE channels are 988, it is clear that the calculation of the <em><strong>jitter</strong></em>s from M2 coincidences calculated over the full CUORE <strong>array</strong> and with a coincidence window of \(100 \ ms\) (<strong>standard</strong> choice without synchronisation) is a <strong>difficult</strong> <del>if not impossible</del> task, because of the <strong>low</strong> statistics. The solution we devised was to use coincidences calculated on a <strong>tower</strong> basis for the jitter calculation. Reducing the number of channels from 988 to 52 means decreasing the rate of accidental coincidences and increasing the M2 statistics. Since the start of the CUORE data taking, we implemented in <em><strong>Diana</strong></em> <strong>two ways</strong> of calculating the jitter: they are described below.</p>
+<ul>
+<li>Jitter by coincidence</li>
+<li>Jitter by delay</li>
+</ul>
+<h2><a id="response-synchronisation-and-coincidence-calculation" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response synchronisation and coincidence calculation</h2>
+<p>The aim of the <strong>CoincidenceSync</strong> method is to correct the \(\Delta t\) among coincident events, synchronising the response of couples of coincident bolometers that suffer from an intrinsic time jitter. In the previous sections we have discussed the calculation of the jitters. In this chapter we describe the <strong>response synchronisation</strong> in coincident events.<br />
+Below is how the coincidence module is implemented into the cfg that is used to calculate the coincidences for the full CUORE: <em>coincidence CUORE.cfg</em>. The cfg uses the <strong>ParaRootFileReader</strong>. The standard RootFileReader reads events in the order that they are inputted in the input <strong>root</strong> file or input <strong>list</strong> file. Since the data are stored by tower, an input list that contained all the tower files would necessarily not be time ordered, but rather sorted by <strong>tower</strong> and then by time. This would create problems for coincidence across tower. The ParaRootFileReader takes a list of input files, time sorts it, and reads events sorted by time across the files in <strong>parallel</strong>.</p>
+<pre class="line-numbers"><code class="language-plain_text">module Coincidence
+enable = true
+verbosity = info
+CoincidenceWindow = 0.01
+# FIXME: put here the correct label for the Energy variable
+EnergyLabel = EnergySelector_QNDBD@Energy
+TimeVariable = OF
+UseRunningWindow = true
+ExtraLabel = OFTime_Sync_20ms
+SyncTime = true
+SyncSource = ${SHARED_SCRATCH}/cuts/ds${DATASET}/jitter_ds${DATASET}.txt
+SyncTowerSource = ${SHARED_SCRATCH}/cuts/ds${DATASET}/jitter_tower_ds${DATASET}.txt
+TimeProfilingOn = true
+OFLabel = FilteredPulseAmplitude_OF
+endmod
+</code></pre>
+<p>If the cfg option <strong>SyncTime</strong> (\(T \eqref{eq: SyncTimeDef}\)) is set to true, two input sources for the jitters must be provided (<strong>SyncSource</strong> and <strong>SyncTowerSource</strong>), the first one being the file that contains the jitters by <strong>coincidence</strong> and the second one the file containing the jitters by <strong>delay</strong>. The module calculates a corrected time of each events in the following way:</p>
+\[\begin{equation} 
+	T = T + jitter\_by\_coincidence_{channel, ref} + jitter\_by\_delay_{ref} 
+\label{eq: SyncTimeDef} 
+\end{equation} 
+\]
+<p>where \(jitter\_by\_coincidence_{channel, ref}\) is the jitter by coincidence of the channel wrt the reference channel of the corresponding tower and \(jitter\_by\_delay_{ref}\) is the mean value of \(\rm{OF_{Delay}}\) for the reference channel. Although named jitter by delay, this quantity is not exactly a jitter (so a time difference) but a characteristic value of \(\rm{OF_{Delay}}\). The \(\Delta t\) calculated from the difference of the times corrected as described above will be not affected by any characteristic jitter. The module uses it to calculate the <strong>multiplicity</strong> of the event.</p>
+<p>After the synchronisation, a much <strong>shorter</strong> coincidence window can be applied. The result of the synchronisation is shown, where on the distribution of the \(\Delta t\) already shown, we have superimposed the same distribution after correcting for the jitter. This extends from -10 ms to 10 ms because of the shorter coincidence window applied.</p>
+<p>In the PRL data processing we have 4 different calculated coincidences:</p>
+<ul>
+<li>Coincidence_OFTime: Threshold 30 keV - Coincidence window 100 ms - No Sync</li>
+<li>Coincidence_OFTime_Sync_20ms: Threshold 30 keV - Coincidence window 20 ms - Sync</li>
+<li>Coincidence_OFTime_Sync_10ms: Threshold 30 keV - Coincidence window 10 ms - Sync</li>
+<li>Coincidence_OFTime_Sync_10ms_150keV: Threshold 150 keV - Coincidence window 10 ms - Sync</li>
+</ul>
+<p>The final choice was to use the Coincidence_OFTime_Sync_10ms_150keV as standard coincidence calculation.</p>
+<section class="footnotes">
+<ol>
+<li id="fn1">
+<p>CUORE-0 Internal Note 104D <a href="http://docdb.wlab.yale.edu:8080/cuore/ShowDocument?docid=9">http://docdb.wlab.yale.edu:8080/cuore/ShowDocument?docid=9</a>. <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2">
+<p>The module MCoincidence <a href="https://cuore-collab.lngs.infn.it/swdoc/master/classMCoincidence.html">https://cuore-collab.lngs.infn.it/swdoc/master/classMCoincidence.html</a>. <a href="#fnref2" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Hall-C Cryostat Manual]]></title>
