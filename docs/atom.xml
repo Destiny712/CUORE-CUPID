@@ -4,13 +4,80 @@
   <title><![CDATA[CUORE_CUPID]]></title>
   <link href="https://destiny712.github.io/CUORE-CUPID/atom.xml" rel="self"/>
   <link href="https://destiny712.github.io/CUORE-CUPID/"/>
-  <updated>2022-04-28T13:48:32+02:00</updated>
+  <updated>2022-06-27T15:40:02+02:00</updated>
   <id>https://destiny712.github.io/CUORE-CUPID/</id>
   <author>
     <name><![CDATA[]]></name>
     
   </author>
   <generator uri="http://www.mweb.im/">MWeb</generator>
+  
+  <entry>
+    <title type="html"><![CDATA[Wilks' theorem]]></title>
+    <link href="https://destiny712.github.io/CUORE-CUPID/Wilks-theorem.html"/>
+    <updated>2022-06-27T11:18:44+02:00</updated>
+    <id>https://destiny712.github.io/CUORE-CUPID/Wilks-theorem.html</id>
+    <content type="html"><![CDATA[
+<p>In <a href="https://en.wikipedia.org/wiki/Statistics">statistics</a> <a href="https://en.wikipedia.org/wiki/Wilks%27_theorem">Wilks' theorem</a> offers an <a href="https://en.wikipedia.org/wiki/Asymptotic_distribution">asymptotic distribution</a> of the log-likelihood ratio statistic, which can be used to produce confidence intervals for <a href="https://en.wikipedia.org/wiki/Maximum-likelihood">maximum-likelihood</a> estimates or as a <a href="https://en.wikipedia.org/wiki/Test_statistic">test statistic</a> for performing the <a href="https://en.wikipedia.org/wiki/Likelihood-ratio_test">likelihood-ratio test</a>.</p>
+<p>Statistical tests (such as <a href="https://en.wikipedia.org/wiki/Hypothesis_testing">hypothesis testing</a>) generally require knowledge of the <a href="https://en.wikipedia.org/wiki/Probability_distribution">probability distribution</a> of the test statistic. This is often a problem for <a href="https://en.wikipedia.org/wiki/Likelihood-ratio_test#Definition">likelihood ratios</a>, where the probability distribution can be very difficult to determine.</p>
+<p>A convenient result by <a href="https://en.wikipedia.org/wiki/Samuel_S._Wilks">Samuel S. Wilks</a> says that as the sample size approaches \(\infty\), the distribution of the test statistic \(−2 \log{(\Lambda )}\) asymptotically approaches the <a href="https://en.wikipedia.org/wiki/Chi-squared_distribution">chi-squared (\(\chi ^{2}\)) distribution</a> under the <a href="https://en.wikipedia.org/wiki/Null_hypothesis">null hypothesis</a> \(H_{0}\).  Here, \(\Lambda\) denotes the likelihood ratio, and the \(\chi ^{2}\) distribution has degrees of freedom equal to the difference in dimensionality of \(\Theta \) and \(\Theta_{0}\), where \(\Theta\) is the full <a href="https://en.wikipedia.org/wiki/Statistical_parameter">parameter space</a> and \(\Theta_{0}\) is the subset of the parameter space associated with \(H_{0}\). This result means that for large samples and a great variety of hypotheses, a practitioner can compute the likelihood ratio \(\Lambda\) for the data and compare \(−2 \log{(\Lambda )}\) to the \(\chi ^{2}\) value corresponding to a desired <a href="https://en.wikipedia.org/wiki/Statistical_significance">statistical significance</a> as an approximate statistical test.</p>
+<p>The theorem no longer applies when any one of the estimated parameters is at its upper or lower limit: Wilks’ theorem assumes that the ‘true’ but unknown values of the estimated parameters lie within the <a href="https://en.wikipedia.org/wiki/Interior_(topology)">interior</a> of the <a href="https://en.wikipedia.org/wiki/Support_(mathematics)">supported</a> parameter space. The likelihood maximum may no longer have the assumed ellipsoidal shape if the maximum value for the population likelihood function occurs at some boundary-value of one of the parameters, i.e. on an edge of the parameter space. In that event, the likelihood test will still be valid and optimal as guaranteed by the <a href="https://en.wikipedia.org/wiki/Neyman-Pearson_lemma">Neyman-Pearson lemma</a>, but the significance (the <a href="https://en.wikipedia.org/wiki/P-value">\(p\)-value</a>) can not be reliably estimated using the chi-squared distribution with the number of degrees of freedom prescribed by Wilks.</p>
+<h2><a id="use" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Use</h2>
+<p>Each of the two competing models, the null model and the alternative model, is separately fitted to the data and the <a href="https://en.wikipedia.org/wiki/Log-likelihood">log-likelihood</a> recorded. The test statistic (often denoted by \( D \eqref{eq: DDef}\)) is twice the log of the likelihoods ratio, <em>i.e.</em>, it is twice the difference in the log-likelihoods:</p>
+\[\begin{equation} 
+    \begin{aligned} 
+    	D &amp;= 
+    	-2 \ln \left( 
+    	\frac{\text { likelihood for null model }}
+    	   {\text { likelihood for alternative model }}\right) \\
+    	&amp;= 2 \ln \left(
+    	\frac{\text { likelihood for alternative model }}
+    	   {\text { likelihood for null model }}\right) \\
+    	&amp;= 2 \times \left[\ln (\text { likelihood for alternative model })
+    	   - \ln (\text { likelihood for null model }) \right]
+	   \end{aligned} 
+\label{eq: DDef} 
+\end{equation} 
+\]
+<h2><a id="examples" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h2>
+<h3><a id="coin-tossing" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Coin tossing</h3>
+<p>An example of Pearson's test is a comparison of two coins to determine whether they have the same probability of coming up heads. The observations can be put into a <a href="https://en.wikipedia.org/wiki/Contingency_table">contingency table</a> with rows corresponding to the coin and columns corresponding to heads or tails. The elements of the contingency table will be the number of times each coin came up heads or tails. The contents of this table are our observations \(X\).</p>
+\[\begin{array}{c|cc}
+    X                &amp; \text { Heads }  &amp; \text { Tails } \\
+    \hline 
+    \text { Coin 1 } &amp; k_{1 \rm{H}}     &amp; k_{1 \rm{T}} \\
+    \text { Coin 2 } &amp; k_{2 \rm{H}}     &amp; k_{2 \rm{T}}
+\end{array}
+\]
+<p>Here \(\Theta \) consists of the possible combinations of values of the parameters \(p_{\rm {1H} }\), \(p_{\rm {1T} }\), \(p_{\rm {2H} }\), and \(p_{\rm {2T} }\), which are the probability that coins 1 and 2 come up heads or tails. In what follows, \(i = 1, 2\) and \(j = \rm {H,T}\). The hypothesis space \(H\) is constrained by the usual constraints on a probability distribution, \(0 \le p_{ij} \le 1\), and \(p_{i\rm {H} } + p_{i\rm {T} } = 1\). The space of the null hypothesis \(H_{0}\) is the subspace where \(p_{1j} = p_{2j}\). The dimensionality of the full parameter space \(\Theta \) is 2 (either of the \(p_{1j}\) and either of the \(p_{2j}\) may be treated as free parameters under the hypothesis \(H\)), and the dimensionality of \(\Theta_{0}\) is 1 (only one of the \(p_{ij}\) may be considered a free parameter under the null hypothesis \(H_{0}\)).</p>
+<p>Writing \( n_{ij} \eqref{eq: nijDef}\) for the best estimates of \(p_{ij}\) under the hypothesis \(H\), the maximum likelihood estimate is given by</p>
+\[\begin{equation} 
+    n_{ij} = 
+    \frac{k_{ij}}
+        {k_{i\rm {H} } + k_{i\rm {T} }} 
+\label{eq: nijDef} 
+\end{equation} 
+\]
+<p>Similarly, the maximum likelihood estimates of \(p_{ij}\) under the null hypothesis \(H_{0}\) are given by</p>
+\[\begin{equation} 
+    m_{ij} = 
+    \frac{k_{1j} + k_{2j}}
+        {k_{1\rm {H} } + k_{2\rm {H} } + k_{1\rm {T} } + k_{2\rm {T} }} 
+\label{eq: mijDef} 
+\end{equation} 
+\]
+<p>which does not depend on the coin \(i\).</p>
+<p>The hypothesis and null hypothesis can be rewritten slightly so that they satisfy the constraints for the logarithm of the likelihood ratio to have the desired distribution. Since the constraint causes the two-dimensional \(H\) to be reduced to the one-dimensional \(H_{0}\), the asymptotic distribution for the test will be \(\chi ^{2} (1)\), the \(\chi ^{2}\) distribution with one degree of freedom.</p>
+<p>For the general contingency table, we can write the log-likelihood ratio statistic as</p>
+\[\begin{equation} 
+−2 \log{(\Lambda )} = 
+    2 \sum _{i,j} {k_{ij} \log{\frac {n_{ij}}{m_{ij}}}}
+\label{eq: loglikelihoodDef} 
+\end{equation} 
+\]
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Coincidence module]]></title>
@@ -91,7 +158,7 @@ endmod
 <section class="footnotes">
 <ol>
 <li id="fn1">
-<p>CUORE-0 Internal Note 104D <a href="http://docdb.wlab.yale.edu:8080/cuore/ShowDocument?docid=9">http://docdb.wlab.yale.edu:8080/cuore/ShowDocument?docid=9</a>. <a href="#fnref1" class="footnote-backref">↩</a></p>
+<p>CUORE-0 Internal Note 104D <a href="https://docdb.wlab.yale.edu/cuore/ShowDocument?docid=9">https://docdb.wlab.yale.edu/cuore/ShowDocument?docid=9</a>. <a href="#fnref1" class="footnote-backref">↩</a></p>
 </li>
 <li id="fn2">
 <p>The module MCoincidence <a href="https://cuore-collab.lngs.infn.it/swdoc/master/classMCoincidence.html">https://cuore-collab.lngs.infn.it/swdoc/master/classMCoincidence.html</a>. <a href="#fnref2" class="footnote-backref">↩</a></p>
